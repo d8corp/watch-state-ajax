@@ -1,0 +1,52 @@
+{
+  "name": "@watch-state/ajax",
+  "version": "1.0.0",
+  "description": "Ajax for watch-state",
+  "main": "index.js",
+  "module": "index.es6.js",
+  "jsnext:main": "index.es6.js",
+  "types": "index.d.ts",
+  "private": true,
+  "scripts": {
+    "build": "bin/release -rollup",
+    "test": "jest",
+    "patch": "bin/release -patch -rollup",
+    "minor": "bin/release -minor -rollup",
+    "major": "bin/release -major -rollup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d8corp/watch-state-ajax.git"
+  },
+  "keywords": [
+    "ajax",
+    "async",
+    "await",
+    "data",
+    "watch-state",
+    "api",
+    "rest",
+    "front-end"
+  ],
+  "author": "Mikhail Lysikov <d8corp@mail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d8corp/watch-state-ajax/issues"
+  },
+  "homepage": "https://github.com/d8corp/watch-state-ajax",
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.33.3",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2",
+    "isomorphic-fetch": "^3.0.0"
+  },
+  "dependencies": {
+    "@watch-state/async": ">=1",
+    "watch-state": ">=1.0.2",
+    "tslib": ">=2"
+  }
+}
