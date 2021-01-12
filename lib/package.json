@@ -1,6 +1,6 @@
 {
   "name": "@watch-state/ajax",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Ajax for watch-state",
   "main": "index.js",
   "module": "index.es6.js",
@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/d8corp/watch-state-ajax",
   "dependencies": {
-    "@watch-state/async": ">=1.0.1",
-    "watch-state": ">=1.0.3",
+    "@watch-state/async": "^1.1.0",
+    "watch-state": "^2.0.0",
     "tslib": ">=2"
   }
 }

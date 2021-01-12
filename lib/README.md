@@ -67,7 +67,7 @@ This is an observable field.
 const user = new Ajax('https://reqres.in/api/users/23')
 // returns 404 user not found
 
-autorun(() => console.log(
+new Watch(() => console.log(
   user.loading ? 'loading...' : user.error || user.value
 ))
 ```
