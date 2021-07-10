@@ -1,5 +1,5 @@
 import Async, {IAsyncOptions} from '@watch-state/async'
-import {state, createEvent} from 'watch-state'
+import {State, globalEvent} from 'watch-state'
 
 type AjaxQueryType = string | number | boolean
 export type AjaxQuery = AjaxQueryType | AjaxQueryType[]
@@ -14,12 +14,17 @@ export type AjaxOptions <D extends AjaxData = AjaxData, Q extends AjaxQueryObjec
 class Ajax<V = any, E = any, D extends AjaxData = AjaxData, Q extends AjaxQueryObject = AjaxQueryObject> extends Async<V, E> {
   query: Q
   data: D
-  @state answer: Response
+  _answer = new State()
+  get answer () {
+    return this._answer.value
+  }
+  set answer (value) {
+    this._answer.value = value
+  }
 
   constructor (url: string, options: AjaxOptions<D, Q> = {}) {
-    const {type = 'text'} = options
-
-    const request = (resolve, reject) => {
+    super({...options, request: (resolve, reject) => {
+      const {type = 'text'} = options
       let query = ''
       for (const key in this.query) {
         const value = this.query[key]
@@ -39,16 +44,18 @@ class Ajax<V = any, E = any, D extends AjaxData = AjaxData, Q extends AjaxQueryO
       fetch(url.replace(/\{(\w+)\}/g, (str, key) => this.data[key] + '') + query, options).then(data => {
         answer = data
         return data[type]()
-      }).then(createEvent(data => {
+      }).then(data => {
+        globalEvent.start()
         this.answer = answer
         answer.status > 399 ? reject(data) : resolve(data)
-      }), createEvent(e => {
+        globalEvent.end()
+      }, e => {
+        globalEvent.start()
         this.answer = answer
         reject(e)
-      }))
-    }
-
-    super({...options, request})
+        globalEvent.end()
+      })
+    }})
 
     this.query = options.query || {} as Q
     this.data = options.data || {} as D
