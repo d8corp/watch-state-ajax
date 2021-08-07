@@ -1,6 +1,6 @@
 {
   "name": "@watch-state/ajax",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Ajax for watch-state",
   "main": "index.js",
   "module": "index.es6.js",
@@ -45,8 +45,8 @@
     "isomorphic-fetch": "^3.0.0"
   },
   "dependencies": {
-    "@watch-state/async": "^1.2.0",
-    "watch-state": "^3.3.3",
-    "tslib": ">=2"
+    "@watch-state/async": "^1.2.1",
+    "watch-state": "^3.4.0",
+    "tslib": "^2.3.0"
   }
 }

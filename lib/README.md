@@ -19,7 +19,7 @@ Based on [@watch-state/async](https://www.npmjs.com/package/@watch-state/async)
 [![stars](https://img.shields.io/github/stars/d8corp/watch-state-ajax?style=social)](https://github.com/d8corp/watch-state-ajax/stargazers)
 [![watchers](https://img.shields.io/github/watchers/d8corp/watch-state-ajax?style=social)](https://github.com/d8corp/watch-state-ajax/watchers)
 
-### Installation
+### Install
 
 npm
 ```bash
@@ -31,7 +31,7 @@ yarn
 yarn add @watch-state/ajax
 ```
 
-### Using
+### Usage
 
 `Ajax` is a `Promise` like constructor
 ```javascript

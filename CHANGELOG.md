@@ -1,6 +1,10 @@
 # Changelog
 
 ## v1.2
+
+### v1.2.1 [![07.08.2021](https://img.shields.io/date/1628369406)](https://github.com/d8corp/watch-state-ajax/tree/v1.2.1)
+- updated dependencies
+
 ### v1.2.0 [![11.07.2021](https://img.shields.io/date/1625951880)](https://github.com/d8corp/watch-state-ajax/tree/v1.2.0)
 - updated `watch-state` to the third version
 - updated readme
